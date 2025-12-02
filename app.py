@@ -79,8 +79,9 @@ def gerar_modelo_excel():
 # =============================================================================
 st.header("1️⃣ Baixar Planilha Padrão")
 
-st.write("Exporte abaixo um modelo vazio de Excel com todas as colunas necessárias.")
-st.write("Preencha os dados a partir desse layout para usar no simulador.")
+st.write("Exporte abaixo um modelo vazio de Excel.")
+st.write("É necessário preencher todas as colunas com os dados de estoque das lojas que irão receber e enviar os produtos.")
+st.write("Os dados devem estar em embalagem de compra (CX, FD, PC etc).")
 st.write("Não altere o título das colunas.")
 
 buffer_modelo = gerar_modelo_excel()
@@ -143,7 +144,7 @@ st.markdown("---")
 # =============================================================================
 # ETAPA 3 – IMPORTAR BASE
 # =============================================================================
-st.header("3️⃣ Importar Base")
+st.header("3️⃣ Importar Planilha Padrão")
 
 arquivo = st.file_uploader("Selecione o arquivo base (.xlsx):", type=["xlsx"])
 

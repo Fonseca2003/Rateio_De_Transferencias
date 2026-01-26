@@ -126,7 +126,7 @@ arquivo = st.file_uploader("Selecione o arquivo base (.xlsx):", type=["xlsx"])
 
 if arquivo is not None and st.button("📥 Salvar"):
     try:
-        with st.spinner("Importando base, aguarde..."):
+        with st.spinner("Importando base..."):
             df_base = pd.read_excel(arquivo, sheet_name="Base")
 
             for col in ['Quantidade Disponível', 'Qtd. Pend. Ped.Compra', 'Média Vda/Dia']:
@@ -228,7 +228,7 @@ def calcular_liberado_para_receber(df_entrada, dias_estoque_entrada, minimo_mov,
 st.header("5️⃣ Calcular Transferências")
 
 if st.button("🚀 Calcular Transferências"):
-    with st.spinner("Processando rateio, isso pode levar alguns instantes..."):
+    with st.spinner("Processando rateio..."):
         df_saida_proc = calcular_liberado_para_transferir(
             df_saida,
             st.session_state.minimo_saida,

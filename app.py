@@ -483,12 +483,15 @@ if st.session_state.resultado_rateio is not None:
 
             def ajustar_largura_colunas(ws, df):
                 for idx, col in enumerate(df.columns):
-                    serie = df[col].astype(str)
+            
+                    serie = df[col].fillna("").astype(str)
+            
                     max_len = max(
                         serie.map(len).max() if not serie.empty else 0,
                         len(str(col)),
                         len("TOTAL")
                     ) + 2
+            
                     ws.set_column(idx, idx, max_len)
 
             # ---- Gerencial ----
